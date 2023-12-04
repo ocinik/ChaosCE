@@ -2,6 +2,16 @@
 
 Hi! This is a collection of hacks and pokes to the original Spectrum game Chaos: The Battle of Wizards
 
+<div align="center">
+
+<img src="pic1.png" width="256" />
+<img src="pic2.png" width="256" />
+
+[try it here](https://spontificae.github.io/ChaosCE/ChaosCE.html)
+
+</div>
+
+
 ## Implementedish
 * Randomised spells for any combination of 1-8 human or computer players
 * 5-6 extra spells per player
@@ -18,3 +28,4 @@ To use, simply load up ChaosCE.html, select your options and the download button
 * but the best ideas are gonna come from you
 
 feedback invited
+

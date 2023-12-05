@@ -20,9 +20,11 @@ Hi! This is a collection of hacks and pokes to the original Spectrum game Chaos:
 
 To use, simply load up ChaosCE.html, select your options and the download button will generate a .pok file that can be loaded or just dragged into a Spectrum emulator. It's terribly messy, and needs to be rewritten from scratch, but was initially just hacked together quickly before matches, and definitely looks it!
 
+NOTE: currently the .pok file is intended to be loaded only after wizard creation and at the spell select screen of the original game. This limitation will be removed in future releases once wizard creation is supported.
+
 ## Future ideas
 * expanded map
-* selectable options
+* selectable options (arenas, scenarios, etc)
 * game config from web
 * add pokfile support to jsspeccy
 * but the best ideas are gonna come from you

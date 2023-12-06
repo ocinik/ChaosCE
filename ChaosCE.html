@@ -131,6 +131,60 @@ function handleFormSubmit(event) {
     [56, 6], [57, 5], [58, 6], [59, 18], [60, 18], [61, 18], [62, 18], [63, 18]
   ];
 
+  // read in level from scenarios/MagicalWoods.txt
+
+
+let txt="1-T---T7--T---2\n\
+T---T---T---T--\n\
+--T---T---T---T\n\
+T---T---T---T--\n\
+4-T---T---T---5\n\
+T---T---T---T--\n\
+--T---T---T---T\n\
+T---T---T---T--\n\
+--T---T---T---T\n\
+6---T--7T---T--\n";
+
+  let level = "NMagicalWoods\n";
+  let scenario_file = 'MagicalWoods.txt';
+  let scenario_file_path = `scenarios/${scenario_file}`;
+ // let scenario_file_content = fetch(scenario_file_path).then(response => response.text());
+ // scenario_file_content.then(content => {
+    let lines = txt.split('\n');
+    map_object_table=57375;
+    map_animation_frame=57696;
+    map_object_properties=57856;
+    offset = 0;
+    lines.forEach(line => {
+      if (line.length > 0) {
+        let chars = line.split('');
+        chars.forEach(char => {
+          // - is blank
+          // 1-8 ignore
+          if (char === 'T') {
+            // found a Tree
+            level += "M 8 " + (map_object_table+offset) + " 36 0\n";
+            level += "M 8 " + (map_object_properties+offset) + " 8 0\n";
+            // generate random int between 0 and 3 inclusive
+            let random_frame = Math.floor(rng() * 4);
+            level += "M 8 " + (map_animation_frame+offset) + " " + random_frame + " 0\n";
+          }
+          offset += 1;
+        }
+        );
+        offset +=1;
+      }
+    });
+  //  });
+
+  // asleep in nature
+  level += "M 8 53228 110 0\n";
+  level += "M 8 53229 97 0\n";
+  level += "M 8 53230 116 0\n";
+  level += "M 8 53231 117 0\n";
+  level += "M 8 53232 114 0\n";
+  level += "Z 8 53233 101 0\n";
+
   // Base address and increment
   let base_address_p1 = 32585;
   let address_increment = 40;
@@ -157,7 +211,7 @@ function handleFormSubmit(event) {
   pok_defaults = wandt+"N12x Trees \nZ 8 39646 12 8 \nN2x Castles \nZ 8 39659 2 1 \nN10x Wall \nZ 8 39799 10 4 \n";
 
   // Join all the .pok lines into a single string
-  let pok_content_str = pok_defaults+ pok_content.join('\n');
+  let pok_content_str = level+pok_defaults+ pok_content.join('\n');
 
   // Trigger the download
   let filename = `chaos_${saneSeed}.pok`;

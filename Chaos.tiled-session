@@ -1,0 +1,26 @@
+{
+    "activeFile": "8P_template.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "8P_template.tmx": {
+            "scale": 0.73625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 480.13582342954163,
+                "y": 321.22241086587445
+            }
+        },
+        "ChaosSprites.tsx": {
+            "scaleInDock": 1
+        }
+    },
+    "openFiles": [
+        "8P_template.tmx"
+    ],
+    "project": "Chaos.tiled-project",
+    "recentFiles": [
+        "8P_template.tmx"
+    ]
+}
